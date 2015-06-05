@@ -4,7 +4,7 @@ Make some lunch plans with your pals.
 
 ## Installation
 
-In hubot project repo, run:
+In your hubot project repo, run:
 
 `npm install hubot-lunchplans --save`
 
@@ -21,7 +21,7 @@ Then add **hubot-lunchplans** to your `external-scripts.json`:
 ```
 hubot lunchplans list - Lists all of today's lunch plans.
 hubot lunchplans add <text> - Adds you to a lunch plan.
-hubot lunchplans with <username> - Adds you to a user's lunch plans.
+hubot lunchplans with <username> - Adds you to another user's lunch plans.
 hubot lunchplans never mind - Removes you from any lunch plans.
 ```
 

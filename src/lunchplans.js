@@ -6,7 +6,7 @@
  * Commands:
  *   hubot lunchplans list - Lists all of today's lunch plans.
  *   hubot lunchplans add <text> - Adds you to a lunch plan.
- *   hubot lunchplans with <username> - Adds you to a user's lunch plans.
+ *   hubot lunchplans with <username> - Adds you to another user's lunch plans.
  *   hubot lunchplans never mind - Removes you from any lunch plans.
  */
 
