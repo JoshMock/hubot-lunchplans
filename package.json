@@ -1,7 +1,7 @@
 {
   "name": "hubot-lunchplans",
   "description": "Make some lunch plans with your pals.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Josh Mock <josh@joshmock.com",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts, lunch",
@@ -16,7 +16,7 @@
     "lodash": "^3.9.3"
   },
   "peerDependencies": {
-    "hubot": "2.x"
+    "hubot": "3.x"
   },
   "devDependencies": {},
   "main": "index.js"
