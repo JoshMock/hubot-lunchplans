@@ -2,6 +2,9 @@
 
 Make some lunch plans with your pals.
 
+Stores lunch plans in Hubot's brain. Deletes all plans when no plans have
+changed in the last 16 hours.
+
 ## Installation
 
 In your hubot project repo, run:
