@@ -16,19 +16,20 @@ var _ = require('lodash');
 
 module.exports = function (robot) {
     function getPlans () {
-        // clear lunch plans if none have been set in 16 hours
-        var lastPlanTime = robot.brain.get('lastLunchPlanSet');
-        if (Date.now() - lastPlanTime > 1000 * 60 * 60 * 16) {
-            robot.brain.remove('lunchPlans');
-            return {};
-        } else {
-            return robot.brain.get('lunchPlans') || {};
-        }
+        var now = Date.now();
+
+        // clear lunch plans if older than 16 hrs
+        var plans = _.filter(robot.brain.get('lunchPlans'), function(plan) {
+            return now - plan.date < 1000 * 60 * 60 * 16;
+        });
+
+        setPlans(plans);
+
+        return plans || {};
     }
 
     function setPlans (plans) {
         robot.brain.set('lunchPlans', plans);
-        robot.brain.set('lastLunchPlanSet', Date.now());
     }
 
     function addPlan (name, who) {
@@ -36,7 +37,8 @@ module.exports = function (robot) {
 
         var plan = plans[name.toLowerCase()] || {
             name: name,
-            who: []
+            who: [],
+            date: Date.now()
         };
 
         if (!_.contains(plan.who, who)) {
