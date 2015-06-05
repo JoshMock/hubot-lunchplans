@@ -1,0 +1,20 @@
+{
+    "env": {
+        "browser": false,
+        "node": true
+    },
+    "globals": {},
+    "rules": {
+        "quotes": 0,
+        "no-underscore-dangle": 0,
+        "no-path-concat": 0,
+        "valid-jsdoc": 1,
+        "no-reserved-keys": 1,
+        "block-scoped-var": 1,
+        "no-lonely-if": 1,
+        "no-nested-ternary": 1,
+        "no-multiple-empty-lines": 1,
+        "space-after-keywords": [1, "always"],
+        "space-before-blocks": [1, "always"]
+    }
+}
