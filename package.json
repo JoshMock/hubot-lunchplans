@@ -1,7 +1,7 @@
 {
   "name": "hubot-lunchplans",
   "description": "Make some lunch plans with your pals.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Josh Mock <josh@joshmock.com",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts, lunch",
