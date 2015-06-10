@@ -15,21 +15,24 @@
 var _ = require('lodash');
 
 module.exports = function (robot) {
+    function setPlans (plans) {
+        robot.brain.set('lunchPlans', plans);
+    }
+
     function getPlans () {
         var now = Date.now();
 
         // clear lunch plans if older than 16 hrs
-        var plans = _.filter(robot.brain.get('lunchPlans'), function(plan) {
-            return now - plan.date < 1000 * 60 * 60 * 16;
+        var cleanPlans = {};
+        _.each(robot.brain.get('lunchPlans'), function (plan, key) {
+            if (now - plan.date < 1000 * 60 * 60 * 16) {
+                cleanPlans[key] = plan;
+            }
         });
 
-        setPlans(plans);
+        setPlans(cleanPlans);
 
-        return plans || {};
-    }
-
-    function setPlans (plans) {
-        robot.brain.set('lunchPlans', plans);
+        return cleanPlans || {};
     }
 
     function addPlan (name, who) {
