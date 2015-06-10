@@ -15,6 +15,10 @@
 var _ = require('lodash');
 
 module.exports = function (robot) {
+    function setPlans (plans) {
+        robot.brain.set('lunchPlans', plans);
+    }
+
     function getPlans () {
         var now = Date.now();
 
@@ -29,10 +33,6 @@ module.exports = function (robot) {
         setPlans(cleanPlans);
 
         return cleanPlans || {};
-    }
-
-    function setPlans (plans) {
-        robot.brain.set('lunchPlans', plans);
     }
 
     function addPlan (name, who) {
